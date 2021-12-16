@@ -23,7 +23,7 @@ public class SpawnerManager : MonoBehaviour
 
     private void Start()
     {
-        DetermineNexrSpawnTime();
+        DetermineNextSpawnTime();
     }
 
     private void Update()
@@ -31,14 +31,15 @@ public class SpawnerManager : MonoBehaviour
         if (Time.time >= _nextSpawnTime)
         {
             SpawnEnemy();
-            DetermineNexrSpawnTime();
+            DetermineNextSpawnTime();
         }
     }
     
-    private void DetermineNexrSpawnTime()
+    private void DetermineNextSpawnTime()
     {
-        SpawnAcceleration++;
-        _nextSpawnTime = Time.time + (SpawnRate / SpawnAcceleration * 5)  ;
+        SpawnAcceleration++; //idea: maximum speed with while loop
+        _nextSpawnTime = Time.time + (SpawnRate / SpawnAcceleration * 5);
+        
     }
 
     private void SpawnEnemy()
@@ -50,7 +51,5 @@ public class SpawnerManager : MonoBehaviour
         enemy.transform.position = position;
         transform.Translate( Vector3.back* (Time.deltaTime + EnemySpeed * 1.25f));
     }
-
-    
     
 }
