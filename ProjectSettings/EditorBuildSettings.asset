@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Arrow Trapper.unity
+    guid: 9e89ba9b0296bba4aa82a4d344bc7846
   m_configObjects: {}
